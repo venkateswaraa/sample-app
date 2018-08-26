@@ -21,3 +21,13 @@ rm -rf *.war
 wget http://34.219.119.246:8081/repository/Shipwrick/com/boot/shipwreck/$a/shipwreck-$a.war
 mv *.war shipwrick.war
 scp -i /ec2key.pem -o StrictHostKeyChecking=no shipwrick.war ec2-user@54.244.198.19:/opt/tomcat8/webapps/
+
+
+##Jenkinsfile#####
+    sh "cat pom.xml | grep '<version>' | head -n 1 > a.txt "
+    sh "cat a.txt | awk '{print \$1}' > b.txt "
+    sh "cat b.txt | sed -e \"s/<version>//\" > c.txt "
+    sh "cat c.txt |  sed 's/<.*//' > d.txt"
+    sh " echo \$(cat d.txt)"
+    f = readFile 'd.txt'
+    echo "The current date is ${f}"
