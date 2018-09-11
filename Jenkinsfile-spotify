@@ -25,6 +25,8 @@ node {
     sh "ssh -o StrictHostKeyChecking=no ec2-user@172.31.23.159 ${Docker_Command2}"
     }
     }
+    //
+    //
     stage('RunDockerContaionerProud') {
     sshagent(['ec2-userKey']) {
     def Docker_Command6 = "docker rm  -f suresh"    
