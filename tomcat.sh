@@ -22,7 +22,7 @@ wget http://34.219.119.246:8081/repository/Shipwrick/com/boot/shipwreck/$a/shipw
 mv *.war shipwrick.war
 scp -i /ec2key.pem -o StrictHostKeyChecking=no shipwrick.war ec2-user@54.244.198.19:/opt/tomcat8/webapps/
 
-
+#############
 ##Jenkinsfile#####
     sh "cat pom.xml | grep '<version>' | head -n 1 > a.txt "
     sh "cat a.txt | awk '{print \$1}' > b.txt "
