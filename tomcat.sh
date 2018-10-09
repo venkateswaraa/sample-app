@@ -10,7 +10,7 @@ cat pom.xml | grep "<version>" | head -n 1 |awk '{print $1}' |sed -e "s/<version
 echo $a
 rm -rf *.war
 wget http://18.236.64.135:8081/repository/maven-releases/in/mpcechno/myapp/$a/myapp-$a.war
-mv *.war myapp.war
+mv *.war myapp5.war
 
 
 or
