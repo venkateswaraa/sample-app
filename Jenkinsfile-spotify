@@ -26,7 +26,7 @@ node {
     }
     }
     //
-    //
+    ///
     stage('RunDockerContaionerProud') {
     sshagent(['ec2-userKey']) {
     def Docker_Command6 = "docker rm  -f suresh"    
